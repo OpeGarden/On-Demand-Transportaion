@@ -3,6 +3,29 @@ import java.util.ArrayList;
 
 
 public class UnitTesting {
+	public static void testStatistic(){
+		Point p1=new Point(0,0);
+		Point p2=new Point(1,0);
+		Point p3=new Point(1,1);
+		Point p4=new Point(0,1);
+		Point o4=new Point(0,0);
+		Point o3=new Point(1,0);
+		Point o2=new Point(1,1);
+		Point o1=new Point(0,1);
+		ArrayList<Point> route= new ArrayList<Point>();
+		route.add(p1);
+		route.add(p2);
+		route.add(p3);
+		route.add(p4);
+		double ans=0;
+		Point p=route.get(0);
+		
+		for(int i=1;i<route.size();i++){
+			ans+=p.distance(route.get(i));
+			p=route.get(i);
+		}
+		System.out.println(ans);
+	}
 	public static boolean testMatchingTrue(){
 		Point p1o=new Point(0,0);
 		Point p1d=new Point(5,5);

@@ -119,6 +119,7 @@ public class Driver {
 	private TransportRequest getPassenger(int i) {
 		return passengers.get(i);
 	}
+	
 	public void setRoute() {
 		route = new ArrayList<Point>();
 		route.add(location);
@@ -128,11 +129,27 @@ public class Driver {
 		for(TransportRequest tr : routeDests){
 			route.add(tr.getDest());
 		}
+		getDistDrive();
 	}
 	public ArrayList<Point> getRoute() {
 		return route;
 	}
-
+	
+	public void getDistDrive(){
+		if (this.route.isEmpty()){
+			lengthRoute= -1;
+		}
+		double ans=0;
+		Point p=route.get(0);
+		
+		for(int i=1;i<route.size();i++){
+			ans+=p.distance(route.get(i));
+			p=route.get(i);
+		}
+		lengthRoute= ans;
+	}
+	
+	
 	public double getLengthRoute(){
 		return lengthRoute;
 	}

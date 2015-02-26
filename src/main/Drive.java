@@ -48,7 +48,7 @@ public class Drive {
 			requestIndex.add(closest);
 			d.addPassenger(requestsList.get(closest));
 			requestsList.matched(closest);
-			System.out.println("matched " + closest);
+			System.out.print("groupe - " + closest);  //////////////////////////////////
 
 			requestsList.setDistanceMatrices();
 
@@ -68,8 +68,9 @@ public class Drive {
 				requestIndex.add(minIndex);
 				d.addPassenger(requestsList.get(minIndex));
 				requestsList.matched(minIndex);
-				System.out.println("matched " +  minIndex);
+				System.out.print(", " + minIndex);   ///////////////////////////////
 			}
+			System.out.println();
 		}	
 	}
 

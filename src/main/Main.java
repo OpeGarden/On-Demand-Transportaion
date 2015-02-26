@@ -9,7 +9,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		//UnitTesting.run();
-		Point p1o=new Point(0,0);
+	/*	Point p1o=new Point(0,0);
 		Point p1d=new Point(5,5);
 		Point p2o=new Point(1,0);
 		Point p2d=new Point(4,5);
@@ -54,10 +54,20 @@ public class Main {
 		Drive d = new Drive();
 		d.matchRequestsToDrivers();
 		d.createRoute();
-		
+		UnitTesting.testStatistic();
 		DrawDrive.draw(d, 100, 100);
 		
+		*/
+		TransportRequest[] requests = new TransportRequest[8];
+
+		RequestsUpdate update = new RequestsUpdate(requests);
+		Drive d = new Drive();
+		d.matchRequestsToDrivers();
+		d.createRoute();
+		System.out.println();
+		d.statistic();
 		
+		DrawDrive.draw(d, 100, 100);
 
 	}
 
