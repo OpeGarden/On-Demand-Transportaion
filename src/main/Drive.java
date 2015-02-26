@@ -5,8 +5,12 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
-public class Drive { // after getting an update we process matching and routes
+/**
+ * after getting an update we process matching and routes
+ * @author Asus
+ *
+ */
+public class Drive { 
 	public static final int NUM_OF_DRIVERS =3;
 	private RequestsUpdate requestsList;
 	private ArrayList<Driver> drivers;
