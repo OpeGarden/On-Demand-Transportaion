@@ -18,6 +18,8 @@ public class Driver {
 	
 	private ArrayList<Point> route;
 	
+	private double lengthRoute;
+	
 	public ArrayList<TransportRequest> getPassengers() {
 		return passengers;
 	}
@@ -131,7 +133,9 @@ public class Driver {
 		return route;
 	}
 
-
+	public double getLengthRoute(){
+		return lengthRoute;
+	}
 
 }
 
