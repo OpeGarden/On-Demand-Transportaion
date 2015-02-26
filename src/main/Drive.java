@@ -98,6 +98,12 @@ public class Drive {
 	}
 
 	public void statistic() {
+		
+		/**
+		 * make test of statistic
+		 * 
+		 *
+		 */
 		// TODO Auto-generated method stub
 		averegeRoudeDrivers();
 		avergeRodePassenger();
