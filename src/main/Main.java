@@ -1,6 +1,7 @@
 package main;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import main.Statistics;
 
 
 
@@ -64,9 +65,7 @@ public class Main {
 		Drive d = new Drive();
 		d.matchRequestsToDrivers();
 		d.createRoute();
-		System.out.println();
-		d.statistic();
-		
+		Statistics.statistic( d.getDrivers());
 		DrawDrive.draw(d, 100, 100);
 
 	}

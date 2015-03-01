@@ -91,6 +91,8 @@ public class RequestsUpdate { //new "stack" of requests
 		}
 		return ans;
 	}
+	
+	
 	public TransportRequest get(int i) {
 		return requests[i];
 	}
@@ -115,6 +117,9 @@ public class RequestsUpdate { //new "stack" of requests
 	}
 	public double getSumDistance(int i, int j) {
 		return originDistances.getDistance(i, j)+destDistances.getDistance(i, j);
+	}
+	public TransportRequest[] getRequest() {
+		return requests	;
 	}
 	
 }

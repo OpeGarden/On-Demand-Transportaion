@@ -4,7 +4,13 @@ package main;
 import java.awt.*;			// graphics and GUI classes
 import java.awt.event.*;	// handles button and window events
 import java.awt.geom.Line2D;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;			// needed for Date and Properties
+
+import javax.swing.JTextArea;
 
 /** This is a simple class for producing scatter plots.
  *	It isn't very general or robust, but the code is short and easy to modify.
@@ -51,6 +57,7 @@ public class Plot extends Canvas {
 	Image offScreenImage;			// off-screen image where we draw
 	Graphics offScreenGraphics;		// graphics context for off-screen image
 	Properties printprefs = new Properties();	// for storing user's printing preferences
+	JTextArea statArea = new JTextArea();
 
 	/** Creates a new plot with specified title, ranges, and grid spacings. */
 	public Plot(String title, double x1, double x2, double x3, double y1, double y2, double y3) {
@@ -81,7 +88,7 @@ public class Plot extends Canvas {
 				public void actionPerformed(ActionEvent e) { printThePlot(); }
 			});											// tell it what to do when the button is clicked
 		controlPanel.add(printButton);					// add the print button to the bottom panel
-		plotFrame.setResizable(false);
+		plotFrame.setResizable(true);
 		plotFrame.pack();								// make the frame just large enough to hold its components
         offScreenImage = createImage(plotWidth+1,plotHeight+1);	// create the off-screen image where we'll draw
         offScreenGraphics = offScreenImage.getGraphics();		// get its graphics context
@@ -90,9 +97,72 @@ public class Plot extends Canvas {
 		plotFrame.setVisible(true);						// show the window!
 		requestFocus();									// take focus away from the clear button
 	}
+	
+	
+	
+	public Plot(double x1, double x2, double x3, double y1, double y2, double y3) {
+		plotCount += 1;
+		plotTitle = "satistics";
+		xMin = x1; xMax = x2; yMin = y1; yMax = y2;
+		xInterval = x3; yInterval = y3;
+		xRange = xMax - xMin; yRange = yMax - yMin;
+		plotFrame = new Frame("satistics");
+		plotFrame.addWindowListener(new WindowAdapter() {	// remove this if you don't want the program
+			public void windowClosing(WindowEvent e) {		// to quit when close-box is clicked
+				System.exit(0);
+		}});
+		Panel centerPanel = new Panel();				// to avoid resizing the canvas, create a panel to hold it
+		plotFrame.add(centerPanel,BorderLayout.CENTER);	// add the panel to the window
+		centerPanel.setSize(500, 500);
+		centerPanel.add(statArea);
+		controlPanel = new Panel();						// create a panel to hold the buttons
+		plotFrame.add(controlPanel,BorderLayout.SOUTH);	// put it at the bottom of the window
+		Button exportButton = new Button("Export to file");		// create a button to clear the plot
+		exportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exportButtonActionPerformed(evt);
+            }
+        });
+		controlPanel.add(exportButton);	// note that southPanel has the default FlowLayout
+		plotFrame.setSize(500, 500);
+		plotFrame.setResizable(true);
+		plotFrame.setLocation(400+20*plotCount,20*plotCount);	// put the window in the upper-right part of the screen
+		plotFrame.setVisible(true);						// show the window!
+		requestFocus();									// take focus away from the clear button
+	}
+	public void setText(String Str){
+		statArea.append(Str);
+	}
+
+	
+	
+	protected void exportButtonActionPerformed(ActionEvent evt) {
+		try {
+			 
+			File file = new File("stat.txt");
+ 
+			// if file doesnt exists, then create it
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+ 
+			FileWriter fw = new FileWriter(file.getAbsoluteFile());
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(statArea.getText());
+			bw.close();
+ 
+			System.out.println("Done");
+ 
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+
 
 	/** Adds a new point to the plot. */
-	public synchronized void addPoint(double newx, double newy) {
+	public synchronized void addPoint(double newx, double newy,int index) {
 		offScreenGraphics.setColor(pointColor);
 		int pixelx = (int) Math.round(plotWidth * (newx-xMin) / xRange);	// convert x to a screen coordinate
 		int pixely = (int) Math.round(plotHeight * (yMax-newy) / yRange);	// remember that screen y is measured downward
@@ -119,7 +189,8 @@ public class Plot extends Canvas {
 		 
 		lastx = pixelx; lasty = pixely;
 		firstPoint = false;
-		
+		offScreenGraphics.setFont(getFont().deriveFont(18.0f));
+		offScreenGraphics.drawString("" + index, pixelx-offset,pixely-offset);
 		repaint();		// tell Java that our paint method needs to be called
 	}
 
