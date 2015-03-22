@@ -1,0 +1,7 @@
+
+the averege roude all drivers are - 151.90001391873383
+the min roude all drivers are - 107.90981723000596
+the max roude all drivers are - 219.79455798147518
+the averege roude all passanger are - 2.8504415617608667
+the min roude all passanger are - 0.0
+the max roude all passanger are - 14.686517209793838
