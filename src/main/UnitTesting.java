@@ -69,7 +69,7 @@ public class UnitTesting {
 		requests[7] = Tp8;
 		
 		RequestsUpdate update = new RequestsUpdate(requests);
-		Drive d = new Drive(update, drivers);
+		DriveMethodOne d = new DriveMethodOne(update, drivers);
 		d.matchRequestsToDrivers();
 		//System.out.println("Expected: " + Utils.printArrayList(group1));
 		//System.out.println("Result: " + Utils.printArrayList(d1.getPassengers()));
@@ -118,7 +118,7 @@ public class UnitTesting {
 		requests[7] = Tp8;
 		
 		RequestsUpdate update = new RequestsUpdate(requests);
-		Drive d = new Drive(update, drivers);
+		DriveMethodOne d = new DriveMethodOne(update, drivers);
 		d.matchRequestsToDrivers();
 		
 		return Driver.assertEquals(group1, d1.getPassengers());

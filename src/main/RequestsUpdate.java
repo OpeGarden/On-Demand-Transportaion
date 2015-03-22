@@ -121,5 +121,11 @@ public class RequestsUpdate { //new "stack" of requests
 	public TransportRequest[] getRequest() {
 		return requests	;
 	}
+	public int indexOf(TransportRequest tr) {
+		for (int i = 0; i < requests.length; i++) {
+			if(requests[i] == tr) return i;
+		}
+		return -1;
+	}
 	
 }

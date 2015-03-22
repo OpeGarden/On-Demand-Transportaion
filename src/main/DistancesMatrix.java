@@ -9,6 +9,10 @@ public class DistancesMatrix {
 		distances = new double[n][n];
 	}
 	
+	public DistancesMatrix(int n, int m) {
+		distances = new double[n][m];
+	}
+
 	public void setDistance(int i, int j, double distance){
 		assert(distance > 0);
 		distances[i][j] = distance;
@@ -22,6 +26,10 @@ public class DistancesMatrix {
 	public int vSize() {
 		
 		return distances.length;
+	}
+
+	public void setNonSquareDistance(int i, int j, double d) {
+		distances[i][j] = d;	
 	}
 
 }

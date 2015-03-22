@@ -43,7 +43,12 @@ public class Driver {
 	public Driver(){
 		this(new Point('r'));
 	}
+	public Driver(Driver d) {
+		this(d.location);
+	}
 	public void addPassenger(TransportRequest e){	
+		assert(!isFull());
+		e.matched();
 		passengers.add(e);
 		capacity++;
 	}

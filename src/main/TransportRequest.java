@@ -11,7 +11,6 @@ public class TransportRequest {
 		return origin.toString() + ":" + dest.toString();
 	}
 	public TransportRequest(Point origin, Point dest) {
-		matched = false;
 		this.origin = origin;
 		this.dest = dest;
 	}
@@ -20,6 +19,10 @@ public class TransportRequest {
 			origin = new Point('r');
 			dest = new Point('r');
 		}
+	}
+	public TransportRequest(TransportRequest tr) {
+		origin = tr.origin;
+		dest = tr.dest;
 	}
 	public double distanceOrigin(TransportRequest other){//distace from origin to another origin
 		return origin.distance(other.origin);

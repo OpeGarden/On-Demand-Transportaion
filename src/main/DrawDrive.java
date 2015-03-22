@@ -14,10 +14,10 @@ public class DrawDrive {
 		float[] arr = Color.RGBtoHSB(a,b,c,null);
 		return Color.getHSBColor(arr[0], arr[1], arr[2]);
 	}
-	public static void draw(Drive drive, double xlim, double ylim) {
+	public static void draw(String title, IDrive drive, double xlim, double ylim) {
 		RequestsUpdate requestsList = drive.getRequestsList();
 		ArrayList<Driver> drivers = drive.getDrivers();
-		Plot graphi = new Plot("graph", -2, Point.LIMIT, 1, -2, Point.LIMIT, 1); // make new graph
+		Plot graphi = new Plot(title, -2, Point.LIMIT, 1, -2, Point.LIMIT, 1); // make new graph
 		
 		
 		for(Driver d : drive.getDrivers()){

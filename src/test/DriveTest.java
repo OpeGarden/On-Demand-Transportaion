@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 import main.Drive;
+import main.DriveMethodOne;
 import main.Driver;
 import main.TransportRequest;
 
@@ -16,7 +17,7 @@ public class DriveTest {
 	@Test
 	public void isSameDuplicatedPassenger() {
 		
-		Drive drive = new Drive();
+		DriveMethodOne drive = new DriveMethodOne();
 		drive.matchRequestsToDrivers();
 		ArrayList<Driver> drivers = drive.getDrivers();
 		for (int i = 0; i < drivers.size(); i++) {
