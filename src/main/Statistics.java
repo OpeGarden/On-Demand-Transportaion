@@ -35,12 +35,15 @@ public class Statistics {
 			double maxd=Integer.MIN_VALUE;
 			ArrayList<TransportRequest> dPassengers=d.getPassengers();
 			for (TransportRequest tr : dPassengers){
-				double diff=(routePasenger(tr, d)-directRoutePasenger(tr, d))/directRoutePasenger(tr, d);
-				averged+=diff;
-				if (mind>diff)
-					mind=diff;
-				if (maxd<diff)
-					maxd=diff;
+				double route=routePasenger(tr, d);
+				double direct=directRoutePasenger(tr, d);
+				double diff=route-direct;
+				double yahas=diff/route;
+				averged+=yahas;
+				if (mind>yahas)
+					mind=yahas;
+				if (maxd<yahas)
+					maxd=yahas;
 			}
 			averged=averged/dPassengers.size();
 			//System.out.println("driver "+i+" averged is - "+averged);
@@ -97,16 +100,17 @@ public class Statistics {
 		boolean findDist=false;
 		Point p=dr.getRoute().get(0);
 		int i=1;
-		while (p.equals(t.getOrigin())){
+		while (!p.equals(t.getOrigin())){
 			p=dr.getRoute().get(i);
 			i++;
 		}
 
-		for( ; findDist != true ; i++){
+		while( findDist != true) {
 			ans+=p.distance(dr.getRoute().get(i));
 			p=dr.getRoute().get(i);
 			if (p.equals(t.getDest()))
 				findDist=true;
+			i++;
 		}
 		return ans;
 	}

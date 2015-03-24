@@ -4,27 +4,44 @@ import java.util.ArrayList;
 
 public class UnitTesting {
 	public static void testStatistic(){
-		Point p1=new Point(0,0);
-		Point p2=new Point(1,0);
-		Point p3=new Point(1,1);
-		Point p4=new Point(0,1);
-		Point o4=new Point(0,0);
-		Point o3=new Point(1,0);
-		Point o2=new Point(1,1);
-		Point o1=new Point(0,1);
-		ArrayList<Point> route= new ArrayList<Point>();
-		route.add(p1);
-		route.add(p2);
-		route.add(p3);
-		route.add(p4);
-		double ans=0;
-		Point p=route.get(0);
+		Point p1o=new Point(0,0);
+		Point p1d=new Point(5,5);
+		Point p2o=new Point(1,0);
+		Point p2d=new Point(4,5);
+		Point p3o=new Point(0,1);
+		Point p3d=new Point(4,4);
+		Point p4o=new Point(1,1);
+		Point p4d=new Point(5,4);
+		Point p5o = new Point(0,5);
+		Point p6o = new Point(1,5);
+		Point p7o = new Point(0,4);
+		Point p8o = new Point(1,4);
 		
-		for(int i=1;i<route.size();i++){
-			ans+=p.distance(route.get(i));
-			p=route.get(i);
-		}
-		System.out.println(ans);
+		Point d1locOrg=new Point (2,0);
+		Driver d1=new Driver(d1locOrg);
+		ArrayList<Driver> drivers = new ArrayList<Driver>();
+		drivers.add(d1);
+		
+		TransportRequest Tp1=new TransportRequest(p1o,p1d);
+		TransportRequest Tp2=new TransportRequest(p2o,p2d);
+		TransportRequest Tp3=new TransportRequest(p3o,p3d);
+		TransportRequest Tp4=new TransportRequest(p4o,p4d);
+			
+		//ArrayList<TransportRequest> group1 = new ArrayList<TransportRequest>();
+		//group1.add(Tp1);group1.add(Tp2);group1.add(Tp3);group1.add(Tp4);
+
+		TransportRequest[] requests = new TransportRequest[4];
+		requests[0] = Tp1;
+		requests[1] = Tp2;
+		requests[2] = Tp3;
+		requests[3] = Tp4;
+		
+		RequestsUpdate update = new RequestsUpdate(requests);
+		DriveMethodOne d = new DriveMethodOne(update, drivers);
+		d.matchRequestsToDrivers();
+		d.createRoute();
+		Statistics.statistic(d.getDrivers());
+		
 	}
 	public static boolean testMatchingTrue(){
 		Point p1o=new Point(0,0);
@@ -124,7 +141,11 @@ public class UnitTesting {
 		return Driver.assertEquals(group1, d1.getPassengers());
 	}
 	public static void run() {
-		System.out.println("MatchingTrue: " + testMatchingTrue());
-		System.out.println("MatchingFalse: " + testMatchingFalse());
+		//System.out.println("MatchingTrue: " + testMatchingTrue());
+		//System.out.println("MatchingFalse: " + testMatchingFalse());
+		
+	}
+	public static void main(String[] args) {
+		testStatistic();
 	}
 }

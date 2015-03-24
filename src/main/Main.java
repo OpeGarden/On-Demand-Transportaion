@@ -13,7 +13,7 @@ public class Main {
 		
 		
 		main1(d);
-		main2(d2);
+	//	main2(d2);
 
 	}
 
