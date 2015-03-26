@@ -7,7 +7,9 @@ public class Utils {
 		System.out.println("\n\n");
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
-				System.out.print(matrix[i][j] + "\t");
+				if( matrix[i][j] < Double.MAX_VALUE)
+					System.out.print(String.format( "%.2f", matrix[i][j] ) + "\t");
+				else System.out.print("Inf" + "\t");
 			}
 			System.out.println("");
 		}

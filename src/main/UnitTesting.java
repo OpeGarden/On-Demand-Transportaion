@@ -40,7 +40,7 @@ public class UnitTesting {
 		DriveMethodOne d = new DriveMethodOne(update, drivers);
 		d.matchRequestsToDrivers();
 		d.createRoute();
-		Statistics.statistic(d.getDrivers());
+		Statistics.statistic(d.getDrivers(), "asfasf");
 		
 	}
 	public static boolean testMatchingTrue(){

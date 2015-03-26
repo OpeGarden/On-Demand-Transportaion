@@ -56,7 +56,7 @@ public class DriveAbsoluteMinimumA extends Drive implements IDrive {
 		}
 		
 		
-		for(Driver d : drivers){
+	/*	for(Driver d : drivers){
 			for(TransportRequest tr: d.getPassengers()){
 				System.out.print(requestsList.indexOf(tr) + ", ");
 				
@@ -65,7 +65,7 @@ public class DriveAbsoluteMinimumA extends Drive implements IDrive {
 			System.out.println();
 		}
 		
-		
+	*/	
 		
 	}
 

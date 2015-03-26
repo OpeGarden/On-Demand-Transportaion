@@ -1,11 +1,46 @@
-DRIVER
 
- averege roude all drivers are - 11.242640687119284
- min roude all drivers are - 11.242640687119284 index of min0
- max roude all drivers are - 11.242640687119284 index of max0
+
+
+array method
+
+ DRIVER
+
+ averege roude all drivers are - 398.5207073794283
+ min roude all drivers are - 349.28569262144686 index of min1
+ max roude all drivers are - 433.0672021031609 index of max2
  
  PASSENGER 
 
- averege roude all passanger are - 0.19766218753183668
- min roude all passanger are - 0.046282150847269006
- max roude all passanger are - 0.30964406271150824
+ averege roude all passanger are - 0.31333348357741364
+ min roude all passanger are - 0.0015998082620760745
+ max roude all passanger are - 0.600461814228553
+
+
+old
+
+ DRIVER
+
+ averege roude all drivers are - 407.447979493033
+ min roude all drivers are - 327.422769162311 index of min1
+ max roude all drivers are - 513.1082205211935 index of max2
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 0.2658834891330953
+ min roude all passanger are - 0.0
+ max roude all passanger are - 0.6957662582950979
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 346.1181983310203
+ min roude all drivers are - 320.8235681090643 index of min1
+ max roude all drivers are - 361.3322453588328 index of max0
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 0.27861021682561377
+ min roude all passanger are - 0.0015998082620760745
+ max roude all passanger are - 0.7525128296059301

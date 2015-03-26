@@ -48,6 +48,14 @@ public class Driver {
 	}
 	public void addPassenger(TransportRequest e){	
 		assert(!isFull());
+		if(e.isMatched()){
+			try {
+				throw new Exception();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+				System.exit(0);
+			}
+		}
 		e.matched();
 		passengers.add(e);
 		capacity++;

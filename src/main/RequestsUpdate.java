@@ -21,7 +21,7 @@ public class RequestsUpdate { //new "stack" of requests
 	}
 	
 	public RequestsUpdate(){
-		requests = randomTransportRequests(NUM_OF_REQUESTS);
+		requests = randomTransportRequestsAreas(NUM_OF_REQUESTS);
 		remaining = requests.length;
 	}
 	
@@ -32,6 +32,16 @@ public class RequestsUpdate { //new "stack" of requests
 //		Utils.swap(requests, i, remaining);
 		remaining--;
 	}
+	
+	
+	public static TransportRequest[] randomTransportRequestsAreas(int num){
+		TransportRequest[] arr = new TransportRequest[num];
+		for (int i = 0; i < num; i++) {
+			arr[i] = new TransportRequest('a');
+		}
+		return arr;
+	}
+	
 	public static TransportRequest[] randomTransportRequests(int num){
 		TransportRequest[] arr = new TransportRequest[num];
 		for (int i = 0; i < num; i++) {
@@ -115,8 +125,8 @@ public class RequestsUpdate { //new "stack" of requests
 	private boolean isMatched(int j) {
 		return requests[j].isMatched();	
 	}
-	public double getSumDistance(int i, int j) {
-		return originDistances.getDistance(i, j)+destDistances.getDistance(i, j);
+	public double getSumDistance(int i, int j, double d) {
+		return d*originDistances.getDistance(i, j)+ (1-d)*destDistances.getDistance(i, j);
 	}
 	public TransportRequest[] getRequest() {
 		return requests	;

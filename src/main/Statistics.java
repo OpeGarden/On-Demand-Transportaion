@@ -6,7 +6,7 @@ public class Statistics {
 
 	private static ArrayList<Driver> drivers;
 	private static Plot a = new Plot(-2, Point.LIMIT, 1, -2, Point.LIMIT, 1);
-	public static void statistic(ArrayList<Driver> d) {
+	public static void statistic(ArrayList<Driver> d,String name) {
 
 		drivers = d;   
 		/**
@@ -15,7 +15,8 @@ public class Statistics {
 		 *
 		 */
 		// TODO Auto-generated method stub
-		a.setText("DRIVER\n");
+		a.setText("\n\n\n" + name + "\n");
+		a.setText("\n DRIVER\n");
 		averegeRoudeDrivers();
 		a.setText("\n \n PASSENGER \n");
 		avergeRodePassenger();

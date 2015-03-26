@@ -13,7 +13,7 @@ import java.util.Random;
 public class Point {
 	private double x;
 	private double y;
-	public static final int LIMIT = 50;
+	public static final int LIMIT = 200;
 	
 	public Point(double d,double e){
 		this.x = d;
@@ -25,7 +25,19 @@ public class Point {
 			x = rand.nextInt(LIMIT);
 			y = rand.nextInt(LIMIT);
 		}
+		else if(c == 'o'){
+			Random rand = new Random();
+			x = rand.nextInt(LIMIT/2);
+			y = rand.nextInt(LIMIT/2);
+		}
+		else if(c == 'd'){
+			Random rand = new Random();
+			x = rand.nextInt(LIMIT/2) + LIMIT/2;
+			y = rand.nextInt(LIMIT/2) + LIMIT/2;
+		}
 	}
+	
+	
 	public Point(Point p){
 		x = p.x;
 		y = p.y;

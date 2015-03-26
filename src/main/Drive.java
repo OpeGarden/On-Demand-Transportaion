@@ -89,6 +89,20 @@ public abstract class Drive implements IDrive {
 	public int size(){
 		return drivers.size();
 	}
+	
+	protected boolean AllPassengersMatched() {
+		for(TransportRequest tr : requestsList.getRequest()){
+			if(!tr.isMatched()) return false;
+		}
+		return true;
+	}
+
+	protected boolean AllDriversFull() {
+		for(Driver driver : drivers){
+			if(!driver.isFull()) return false;
+		}
+		return true;
+	}
 
 	public abstract void matchRequestsToDrivers();
 
