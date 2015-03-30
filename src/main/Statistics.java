@@ -29,9 +29,13 @@ public class Statistics {
 		double max=Integer.MIN_VALUE;
 		double min=Integer.MAX_VALUE;
 		double averge=0;
+		double avergeWait=0;
+		int sumpassenger=0;
 		for(Driver d : drivers){
+			sumpassenger+=d.getPassengers().size();
 			i++;
 			double averged=0;
+//			double avergeWaitd=0;
 			double mind=Integer.MAX_VALUE;
 			double maxd=Integer.MIN_VALUE;
 			ArrayList<TransportRequest> dPassengers=d.getPassengers();
@@ -41,17 +45,20 @@ public class Statistics {
 				double diff=route-direct;
 				double yahas=diff/route;
 				averged+=yahas;
+				avergeWait+=waitToDrive(tr, d);
 				if (mind>yahas)
 					mind=yahas;
 				if (maxd<yahas)
 					maxd=yahas;
 			}
 			averged=averged/dPassengers.size();
+//			avergeWaitd/=dPassengers.size();
 			//System.out.println("driver "+i+" averged is - "+averged);
 			//System.out.println("driver "+i+" mind is - "+ mind);
 			//System.out.println("driver "+i+" maxd is - "+maxd);
 
 			averge+=averged;
+//			avergeWait+=avergeWaitd;
 			if (min>mind)
 				min=mind;
 			if (max<maxd)
@@ -59,9 +66,12 @@ public class Statistics {
 		}
 
 		averge=averge/(drivers.size());
+		avergeWait/=sumpassenger;
 		a.setText("\n averege roude all passanger are - " + averge);
+		a.setText("\n averege waited to collect all driver are - "+avergeWait);
 		a.setText("\n min roude all passanger are - "+min);
 		a.setText("\n max roude all passanger are - "+max);
+		
 	}
 
 
@@ -81,7 +91,7 @@ public class Statistics {
 				min=dlength;
 				indexofmin=i;
 			}
-			
+
 			if (max<dlength){
 				max=dlength;
 				indexofmax=i;
@@ -120,5 +130,19 @@ public class Statistics {
 		if (!(dr.getPassengers().contains(t)))
 			return -1;
 		return t.getOrigin().distance(t.getDest());
+	}
+	public static double waitToDrive(TransportRequest t,Driver dr){
+		if (!(dr.getPassengers().contains(t)))
+			return -1;
+		double ans=0;
+		Point p=dr.getRoute().get(0);
+		int i=1;
+		while (!p.equals(t.getOrigin())){
+			Point q=dr.getRoute().get(i);
+			i++;
+			ans+=p.distance(q);
+			p=q;
+		}
+		return ans;
 	}
 }

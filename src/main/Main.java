@@ -13,6 +13,8 @@ public class Main {
 		
 		DriveAbsoluteMinimunUpdating d3 = new DriveAbsoluteMinimunUpdating(d.getRequestsList(), d.getDrivers());
 		
+	
+		
 		main1(d);
 		main2(d2);
 		main3(d3);
@@ -20,6 +22,8 @@ public class Main {
 	}
 
 	private static void main3(Drive d){
+		 
+				
 		d.matchRequestsToDrivers();
 
 		d.createRoute();

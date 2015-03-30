@@ -194,7 +194,7 @@ public class Plot extends Canvas {
 		repaint();		// tell Java that our paint method needs to be called
 	}
 
-	public synchronized void addLine(Point p1, Point p2) {
+/*	public synchronized void addLine(Point p1, Point p2) {
 		offScreenGraphics.setColor(pointColor);
 		int pixelx1 = (int) Math.round(plotWidth * (p1.getX()-xMin) / xRange);	
 		int pixelx2 = (int) Math.round(plotWidth * (p2.getX()-xMin) / xRange);	
@@ -202,7 +202,11 @@ public class Plot extends Canvas {
 		int pixely2 = (int) Math.round(plotHeight * (yMax-p2.getY()) / yRange);
 		offScreenGraphics.drawLine(pixelx1,pixely1,pixelx2,pixely2);
 		repaint();
+	} */
+	public synchronized void addLine(Point p1, Point p2) {
+	
 	}
+	
 	/** Changes the size of the plotted points (newSize in pixels). */
 	public void setPointSize(int newSize) {
 		pointSize = newSize;

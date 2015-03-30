@@ -13,7 +13,7 @@ import java.util.Random;
 public class Point {
 	private double x;
 	private double y;
-	public static final int LIMIT = 200;
+	public static final int LIMIT = 50;
 	
 	public Point(double d,double e){
 		this.x = d;

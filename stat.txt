@@ -5,42 +5,45 @@ array method
 
  DRIVER
 
- averege roude all drivers are - 398.5207073794283
- min roude all drivers are - 349.28569262144686 index of min1
- max roude all drivers are - 433.0672021031609 index of max2
+ averege roude all drivers are - 143.69616834995372
+ min roude all drivers are - 88.13138227877349 index of min2
+ max roude all drivers are - 202.24195812027475 index of max1
  
  PASSENGER 
 
- averege roude all passanger are - 0.31333348357741364
- min roude all passanger are - 0.0015998082620760745
- max roude all passanger are - 0.600461814228553
+ averege roude all passanger are - 0.44833100233270473
+ averege waited to collect all driver are - 39.93055157194345
+ min roude all passanger are - 0.01852482113702473
+ max roude all passanger are - 0.8428243284197828
 
 
 old
 
  DRIVER
 
- averege roude all drivers are - 407.447979493033
- min roude all drivers are - 327.422769162311 index of min1
- max roude all drivers are - 513.1082205211935 index of max2
+ averege roude all drivers are - 131.21671677256222
+ min roude all drivers are - 114.41857083139332 index of min1
+ max roude all drivers are - 157.0404273986959 index of max2
  
  PASSENGER 
 
- averege roude all passanger are - 0.2658834891330953
+ averege roude all passanger are - 0.5249671626398468
+ averege waited to collect all driver are - 32.49920840946963
  min roude all passanger are - 0.0
- max roude all passanger are - 0.6957662582950979
+ max roude all passanger are - 0.7782969951732448
 
 
 min update
 
  DRIVER
 
- averege roude all drivers are - 346.1181983310203
- min roude all drivers are - 320.8235681090643 index of min1
- max roude all drivers are - 361.3322453588328 index of max0
+ averege roude all drivers are - 127.95011785433276
+ min roude all drivers are - 88.13138227877349 index of min2
+ max roude all drivers are - 155.00734658014136 index of max1
  
  PASSENGER 
 
- averege roude all passanger are - 0.27861021682561377
- min roude all passanger are - 0.0015998082620760745
- max roude all passanger are - 0.7525128296059301
+ averege roude all passanger are - 0.45763307493062105
+ averege waited to collect all driver are - 34.47981754493613
+ min roude all passanger are - 0.0
+ max roude all passanger are - 0.8428243284197828

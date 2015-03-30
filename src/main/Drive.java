@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  */
 public abstract class Drive implements IDrive { 
-	public static final int NUM_OF_DRIVERS =3;
+	public static final int NUM_OF_DRIVERS =10;
 	protected RequestsUpdate requestsList;
 	
 	/**
