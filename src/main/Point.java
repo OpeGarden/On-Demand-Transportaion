@@ -1,6 +1,8 @@
 package main;
 import java.util.Random;
 
+import com.google.maps.model.LatLng;
+
 
 /*
  *שלום חברס!!עקרונית שידרגתי קצת המחלקה שאני אצטרך להרחיב בהמשך
@@ -10,66 +12,65 @@ import java.util.Random;
  */
 
 
-public class Point {
-	private double x;
-	private double y;
+public class Point extends LatLng {	
 	public static final int LIMIT = 200;
 	
 	public Point(double d,double e){
-		this.x = d;
-		this.y = e;
+		super(d, e);
 	}
 	public Point(char c){// creates random point
+		super(0, 0);
 		if(c == 'r'){//r means random
 			Random rand = new Random();
-			x = rand.nextInt(LIMIT);
-			y = rand.nextInt(LIMIT);
+			lat = rand.nextInt(LIMIT);
+			lng = rand.nextInt(LIMIT);
 		}
 		else if(c == 'o'){
 			Random rand = new Random();
-			x = rand.nextInt(LIMIT/2);
-			y = rand.nextInt(LIMIT/2);
+			lat = rand.nextInt(LIMIT/2);
+			lng = rand.nextInt(LIMIT/2);
 		}
 		else if(c == 'd'){
 			Random rand = new Random();
-			x = rand.nextInt(LIMIT/2) + LIMIT/2;
-			y = rand.nextInt(LIMIT/2) + LIMIT/2;
+			lat = rand.nextInt(LIMIT/2) + LIMIT/2;
+			lng = rand.nextInt(LIMIT/2) + LIMIT/2;
 		}
 	}
 	
 	
 	public Point(Point p){
-		x = p.x;
-		y = p.y;
+		super(0,0);
+		lat = p.lat;
+		lng = p.lng;
 	}
 	
 	public double getX(){
-		return x;
+		return lat;
 	}
 
 	public double getY(){
-		return y;
+		return lng;
 	}
 	
 	public void setX(double x){
-		this.x = x;
+		this.lat = x;
 	}
 	
 	public void setY(double y){
-		this.y = y; 
+		this.lng = y; 
 	}
 	
 	public double distance(Point p){
-		double power = Math.pow(x - p.x, 2) + Math.pow(y - p.y,2);
+		double power = Math.pow(lat - p.lat, 2) + Math.pow(lng - p.lng,2);
 		double d = Math.sqrt(power);
 		return d;
 	}
 	
 	public String toString(){
-		return "(" + x + "," + y + ")";
+		return "(" + lat + "," + lng + ")";
 	}
 	public boolean equals(Point p){
-		if (this.x==p.getX() && this.y==p.getY()) 
+		if (this.lat==p.lat && this.lng==p.lng) 
 			return true;
 		return false;
 	}
