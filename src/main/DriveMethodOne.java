@@ -17,11 +17,10 @@ public class DriveMethodOne extends Drive {
 			ArrayList<Integer> requestIndex = new  ArrayList<Integer>();
 
 			int closest = requestsList.findClosestTo(d);
+			if(closest == -1) continue;
 			requestIndex.add(closest);
 			d.addPassenger(requestsList.get(closest));
 			requestsList.matched(closest);
-			System.out.print("\ntesting\ngroupe - " + closest);  //////////////////////////////////
-
 			requestsList.setDistanceMatrices();
 
 			//fill driver car while it has 
@@ -40,7 +39,7 @@ public class DriveMethodOne extends Drive {
 				requestIndex.add(minIndex);
 				d.addPassenger(requestsList.get(minIndex));
 				requestsList.matched(minIndex);
-				System.out.print(", " + minIndex);   ///////////////////////////////
+				//System.out.print(", " + minIndex);   ///////////////////////////////
 			}
 			System.out.println();
 		}	

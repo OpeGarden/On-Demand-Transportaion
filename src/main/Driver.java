@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Driver {
 
 
-	static final int MAX_CAPACITY =4;
+	public static int MAX_CAPACITY = 5;
 	private int capacity; // the place in the car. 
 	private Point location; //the location of the driver.
 	private ArrayList<TransportRequest> passengers;
@@ -165,6 +165,9 @@ public class Driver {
 	
 	public double getLengthRoute(){
 		return lengthRoute;
+	}
+	public boolean isEmpty() {
+		return size() == 0;
 	}
 
 }

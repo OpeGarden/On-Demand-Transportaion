@@ -1,13 +1,81 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class Statistics {
+	private double additionPrecentage;
+	private double waitDistace;
+	private double driverDistance;
+	private double maxAddition;
+	private double midAddition;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public double getMidAddition() {
+		return midAddition;
+	}
 
+
+	public void setMidAddition(double midAddition) {
+		this.midAddition = midAddition;
+	}
+
+
+	public double getMaxAddition() {
+		return maxAddition;
+	}
+
+
+	public void setMaxAddition(double maxAddition) {
+		this.maxAddition = maxAddition;
+	}
+
+
+	public double getAdditionPrecentage() {
+		return additionPrecentage;
+	}
+
+
+	public void setAdditionPrecentage(double additionPrecentage) {
+		this.additionPrecentage = additionPrecentage;
+	}
+
+
+	public double getWaitDistace() {
+		return waitDistace;
+	}
+
+
+	public void setWaitDistace(double waitDistace) {
+		this.waitDistace = waitDistace;
+	}
+
+
+	public double getDriverDistance() {
+		return driverDistance;
+	}
+
+
+	public void setDriverDistance(double driverDistance) {
+		this.driverDistance = driverDistance;
+	}
+	
+	
+	
 	private static ArrayList<Driver> drivers;
 	private static Plot a = new Plot(-2, Point.LIMIT, 1, -2, Point.LIMIT, 1);
-	public static void statistic(ArrayList<Driver> d,String name) {
-
+	public static Statistics statistic(ArrayList<Driver> d,String name) {
+		Statistics me = new Statistics();
+		
+		
 		drivers = d;   
 		/**
 		 * make test of statistic
@@ -17,13 +85,15 @@ public class Statistics {
 		// TODO Auto-generated method stub
 		a.setText("\n\n\n" + name + "\n");
 		a.setText("\n DRIVER\n");
-		averegeRoudeDrivers();
+		averegeRoudeDrivers(me);
 		a.setText("\n \n PASSENGER \n");
-		avergeRodePassenger();
+		avergeRodePassenger(me);
+		
+		return me;
 	}
 
 
-	private static void avergeRodePassenger() {
+	private static void avergeRodePassenger(Statistics me) {
 		// TODO Auto-generated method stub
 		int i=0;
 		double max=Integer.MIN_VALUE;
@@ -31,6 +101,9 @@ public class Statistics {
 		double averge=0;
 		double avergeWait=0;
 		int sumpassenger=0;
+		
+		ArrayList<Double> ratios = new ArrayList<Double>();
+		
 		for(Driver d : drivers){
 			sumpassenger+=d.getPassengers().size();
 			i++;
@@ -44,6 +117,7 @@ public class Statistics {
 				double direct=directRoutePasenger(tr, d);
 				double diff=route-direct;
 				double yahas=diff/route;
+				ratios.add(yahas);
 				averged+=yahas;
 				avergeWait+=waitToDrive(tr, d);
 				if (mind>yahas)
@@ -72,10 +146,33 @@ public class Statistics {
 		a.setText("\n min roude all passanger are - "+min);
 		a.setText("\n max roude all passanger are - "+max);
 		
+		me.setAdditionPrecentage(averge);
+		me.setWaitDistace(avergeWait);
+		me.setMaxAddition(max);
+		
+		Object[] arr =  ratios.toArray();
+		
+		Arrays.sort(arr, new Comparator<Object>() {
+
+			@Override
+			public int compare(Object o1, Object o2) {
+				// TODO Auto-generated method stub
+				return Double.compare((Double) o1, (Double)o2);
+			}
+		});
+		
+		me.setAdditionMid((Double) arr[arr.length/2]);
+		
 	}
 
 
-	private static void averegeRoudeDrivers() {
+	private void setAdditionMid(Double mid) {
+		this.midAddition = mid;
+		
+	}
+
+
+	private static void averegeRoudeDrivers(Statistics me) {
 		// TODO Auto-generated method stub
 		double max=0;
 		double min=Integer.MAX_VALUE;
@@ -102,6 +199,8 @@ public class Statistics {
 		a.setText("\n averege roude all drivers are - "+averge);
 		a.setText("\n min roude all drivers are - "+min + " index of min" + indexofmin);
 		a.setText("\n max roude all drivers are - "+max + " index of max" + indexofmax);
+		
+		me.setDriverDistance(averge);
 	}
 
 	public static double routePasenger(TransportRequest t,Driver dr){
