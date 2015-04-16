@@ -19,10 +19,13 @@ public class TransportRequest {
 		if (c == 'r') {
 			origin = new Point(c);
 			dest = new Point(c);
+			while (dest.equals(origin)) dest = new Point(c);
 		} else if(c=='a'){
 			origin = new Point('o');	
 			dest = new Point('d');	
 		}
+		
+		
 
 	}
 

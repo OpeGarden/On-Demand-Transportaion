@@ -26,7 +26,10 @@ public class Main {
 		
 		main1(d);
 		main2(d2);
-		main3(d3);*/
+		main3(d3);*/ catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

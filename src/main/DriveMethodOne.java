@@ -29,7 +29,7 @@ public class DriveMethodOne extends Drive {
 				int minIndex = -1;
 				for (int i : requestIndex){
 					int bestForI = requestsList.findBest(i);
-					double sumDistance = requestsList.getSumDistance(i,bestForI,0.7);
+					double sumDistance = requestsList.getSumDistance(i,bestForI,0.75);
 					if(sumDistance < min){
 						min = sumDistance;
 						minIndex = bestForI;
@@ -41,7 +41,6 @@ public class DriveMethodOne extends Drive {
 				requestsList.matched(minIndex);
 				//System.out.print(", " + minIndex);   ///////////////////////////////
 			}
-			System.out.println();
 		}	
 	}
 
