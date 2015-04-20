@@ -21,7 +21,7 @@ public class RequestsUpdate { //new "stack" of requests
 	}
 	
 	public RequestsUpdate(){
-		requests = randomTransportRequestsAreas(NUM_OF_REQUESTS);
+		requests = randomTransportRequests(NUM_OF_REQUESTS);
 		remaining = requests.length;
 	}
 	

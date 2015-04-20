@@ -70,7 +70,7 @@ public class DriveAbsoluteMinimunUpdating extends Drive {
 				// best to current passenger i
 				double min = Double.MAX_VALUE;
 				for (TransportRequest tr : drivers.get(lastMatchDriver).getPassengers()) {
-					double sumDistance = tr.getSumDistance(requestsList.get(i), 0.75);
+					double sumDistance = tr.getSumDistance(requestsList.get(i), 0.25);
 					min = Math.min(min, sumDistance);
 				}
 
