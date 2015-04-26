@@ -15,7 +15,7 @@ public class TSPNearestNeighbour{
 
 	public <T> ArrayList<T> tsp(ArrayList<T> list, double[][] adjacencyMatrix , int begin){
 		ArrayList<T> ans = new ArrayList<T>();
-		numberOfNodes = adjacencyMatrix[1].length - 1;
+		numberOfNodes = adjacencyMatrix[0].length - 1;
 		int[] visited = new int[numberOfNodes + 1];
 		
 		visited[begin] = 1;

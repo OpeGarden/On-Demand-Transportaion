@@ -1,11 +1,12 @@
 package main;
 
 public class RequestsUpdate { //new "stack" of requests
-	public static int NUM_OF_REQUESTS = 40;
+	public static int NUM_OF_REQUESTS = 50;
 	private TransportRequest[] requests;
 	private DistancesMatrix originDistances;
 	private DistancesMatrix destDistances;
-	private int remaining;
+
+	private int matchedCounter;
 	
 	public DistancesMatrix getOriginDistances() {
 		return originDistances;
@@ -13,25 +14,20 @@ public class RequestsUpdate { //new "stack" of requests
 	public DistancesMatrix getDestDistances() {
 		return destDistances;
 	}
-	public int getRemaining(){
-		return remaining;
-	}
+
 	public int size(){
 		return requests.length;
 	}
 	
 	public RequestsUpdate(){
-		requests = randomTransportRequests(NUM_OF_REQUESTS);
-		remaining = requests.length;
+		this(randomTransportRequests(NUM_OF_REQUESTS));
 	}
 	
 	public RequestsUpdate(TransportRequest[] requests) {
 		this.requests = requests;
+		matchedCounter = 0;
 	}
-	public void delete(int i){
-//		Utils.swap(requests, i, remaining);
-		remaining--;
-	}
+
 	
 	
 	public static TransportRequest[] randomTransportRequestsAreas(int num){
@@ -107,6 +103,7 @@ public class RequestsUpdate { //new "stack" of requests
 		return requests[i];
 	}
 	public void matched(int i) {
+		matchedCounter++;
 		requests[i].matched();	
 	}
 	public int findBest(int i) {
@@ -136,6 +133,9 @@ public class RequestsUpdate { //new "stack" of requests
 			if(requests[i] == tr) return i;
 		}
 		return -1;
+	}
+	public boolean areAllMatched() {
+		return matchedCounter == size();
 	}
 	
 }

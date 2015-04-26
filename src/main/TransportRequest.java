@@ -4,7 +4,7 @@ public class TransportRequest {
 
 	private Point origin;
 	private Point dest;
-	private boolean matched;
+	private boolean matched = false;
 
 	public String toString() {
 		return origin.toString() + ":" + dest.toString();
@@ -56,7 +56,7 @@ public class TransportRequest {
 	public boolean isMatched() {
 		return matched;
 	}
-
+	
 	public void matched() {
 		matched = true;
 	}
