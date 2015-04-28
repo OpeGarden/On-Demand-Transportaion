@@ -1,7 +1,7 @@
 package main;
 
 public class RequestsUpdate { //new "stack" of requests
-	public static int NUM_OF_REQUESTS = 50;
+	public static int NUM_OF_REQUESTS = 100;
 	private TransportRequest[] requests;
 	private DistancesMatrix originDistances;
 	private DistancesMatrix destDistances;
@@ -20,7 +20,7 @@ public class RequestsUpdate { //new "stack" of requests
 	}
 	
 	public RequestsUpdate(){
-		this(randomTransportRequests(NUM_OF_REQUESTS));
+		this(randomTransportRequestsAreas(NUM_OF_REQUESTS));
 	}
 	
 	public RequestsUpdate(TransportRequest[] requests) {
