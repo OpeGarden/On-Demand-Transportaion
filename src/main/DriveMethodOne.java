@@ -15,7 +15,7 @@ public class DriveMethodOne extends Drive {
 	public void matchRequestsToDrivers() { // the fitst function
 		for(Driver d : drivers){
 			if(requestsList.areAllMatched()) break;
-			System.out.println("match Requests To driver number: " + driverCounter++);
+			//System.out.println("match Requests To driver number: " + driverCounter++);
 			ArrayList<Integer> requestIndex = new  ArrayList<Integer>();
 
 			int closest = requestsList.findClosestTo(d);
@@ -31,7 +31,7 @@ public class DriveMethodOne extends Drive {
 				int minIndex = -1;
 				for (int i : requestIndex){
 					int bestForI = requestsList.findBest(i);
-					double sumDistance = requestsList.getSumDistance(i,bestForI,1);
+					double sumDistance = requestsList.getSumDistance(i,bestForI,0.5);
 					if(sumDistance < min){
 						min = sumDistance;
 						minIndex = bestForI;

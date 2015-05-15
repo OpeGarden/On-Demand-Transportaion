@@ -14,11 +14,14 @@ public class DrawDrive {
 		float[] arr = Color.RGBtoHSB(a,b,c,null);
 		return Color.getHSBColor(arr[0], arr[1], arr[2]);
 	}
-	public static void draw(String title, IDrive drive) {
+	public static void draw(String title, IDrive drive, boolean noLines) {
 		RequestsUpdate requestsList = drive.getRequestsList();
 		ArrayList<Driver> drivers = drive.getDrivers();
-		Plot graphi = new Plot(title, -2, Point.LIMIT, 1, -2, Point.LIMIT, 1); // make new graph
-
+		Plot graphi = new Plot(title, -2, Point.LIMIT, 100, -2, Point.LIMIT, 100); // make new graph
+			
+		int flag = 1;
+		
+		
 
 		for(Driver d : drive.getDrivers()){
 
@@ -32,15 +35,28 @@ public class DrawDrive {
 				graphi.addPoint(tr.getDest().getX(),tr.getDest().getY(),index); // add the point to the graph
 			}
 			ArrayList<Point> routeExample = d.getRoute();
-			if(routeExample != null){
-				graphi.setColor(randomColor());
-				for (int i = 1; i < routeExample.size(); i++) {
-					graphi.addLine(routeExample.get(i-1), routeExample.get(i) );
-				}	
+			
+			
+			
+			if(!noLines && flag==2){
+				if(routeExample != null){
+					graphi.setColor(randomColor());
+					for (int i = 1; i < routeExample.size(); i++) {
+						graphi.addLine(routeExample.get(i-1), routeExample.get(i) );
+					}	
+				}
+				
 			}
+			flag ++;
+			
+			
 		}
 
 
+	}
+	public static void draw(String string, Drive d) {
+		draw(string, d, false);
+		
 	}
 
 }

@@ -21,7 +21,7 @@ public class Graphs {
 
 		avgAddtion = maxAddition = avgWait = midAddtion = ",static method,naive method,dynamic method";
 
-		for (int i = 10; i <= 150; i += 5) {
+		for (int i = 5; i <= 150; i += 5) {
 			additionArr = new double[3];
 			maxAdditionArr = new double[3];
 			waitArr = new double[3];
@@ -31,6 +31,7 @@ public class Graphs {
 				RequestsUpdate.NUM_OF_REQUESTS = i;
 				//System.out.println("NUM_OF_REQUESTS: " + i + " num of drivers: " + Drive.NUM_OF_DRIVERS);
 				Drive.NUM_OF_DRIVERS = i / Driver.MAX_CAPACITY;
+				
 				DriveAbsoluteMinimumA d = new DriveAbsoluteMinimumA();
 				DriveMethodOne d2 = new DriveMethodOne(d.getRequestsList(),
 						d.getDrivers());
@@ -77,28 +78,28 @@ public class Graphs {
 
 			}
 
-			avgAddtion += "\n" + i + " passengers,"
+			avgAddtion += "\n" + i + " driver,"
 					+ (additionArr[0] / ITERATIONS) + ","
 					+ (additionArr[1] / ITERATIONS) + ","
 					+ (additionArr[2] / ITERATIONS);
 
-			if (avgAddtion.contains("NaN")){
+		/*  if (avgAddtion.contains("NaN")){
 				for (double d1 : additionArr) {
 					System.out.println(((Double)d1).isNaN());
 				}
 				throw new Exception("drivers.size(): ");
-			}
+			} */
 
-			maxAddition += "\n" + i + " passengers,"
+			maxAddition += "\n" + i + " driver,"
 					+ (maxAdditionArr[0] / ITERATIONS) + ","
 					+ (maxAdditionArr[1] / ITERATIONS) + ","
 					+ (maxAdditionArr[2] / ITERATIONS);
 
-			avgWait += "\n" + i + " passengers," + (waitArr[0] / ITERATIONS)
+			avgWait += "\n" + i + " driver," + (waitArr[0] / ITERATIONS)
 					+ "," + (waitArr[1] / ITERATIONS) + ","
 					+ (waitArr[2] / ITERATIONS);
 
-			midAddtion += "\n" + i + " passengers,"
+			midAddtion += "\n" + i + " driver,"
 					+ (midAdditionArr[0] / ITERATIONS) + ","
 					+ (midAdditionArr[1] / ITERATIONS) + ","
 					+ (midAdditionArr[2] / ITERATIONS);

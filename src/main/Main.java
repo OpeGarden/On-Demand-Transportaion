@@ -10,22 +10,21 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-
+		//maingraph();
+		main0();
 		
-/*		DriveAbsoluteMinimumA d = new DriveAbsoluteMinimumA();
+	}
+	public static void main0(){
+		DriveAbsoluteMinimumA d = new DriveAbsoluteMinimumA();
 		DriveMethodOne d2 = new DriveMethodOne(d.getRequestsList(), d.getDrivers());
 		DriveAbsoluteMinimunUpdating d3 = new DriveAbsoluteMinimunUpdating(d.getRequestsList(), d.getDrivers());
 		main1(d);
 		main2(d2);
-		main3(d3);*/
-
+		main3(d3);
 	}
 	
-	public static void runAll(){
-		
-	}
 	
-	public static void grpahiteration(){
+	public static void maingraph(){
 		try {
 			Graphs.passengerChange();
 		} catch (FileNotFoundException e) {
@@ -35,8 +34,6 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 	}
 
 	public static void main3(Drive d){
@@ -68,7 +65,7 @@ public class Main {
 		d.createRoute();
 
 		Statistics.statistic(d.getDrivers(), "static");
-		DrawDrive.draw("array method", d);
+		DrawDrive.draw("array method", d, true);
 	}
 
 }
