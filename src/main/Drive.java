@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  */
 public abstract class Drive implements IDrive { 
-	public static int NUM_OF_DRIVERS = 5;
+	public static int NUM_OF_DRIVERS = 2;
 	protected RequestsUpdate requestsList;
 
 	/**
@@ -39,7 +39,7 @@ public abstract class Drive implements IDrive {
 
 	public Drive(){
 		requestsList = new RequestsUpdate();
-		drivers = Driver.randomDrivers(NUM_OF_DRIVERS);
+		drivers = Driver.stationDrivers(NUM_OF_DRIVERS);
 
 	}
 

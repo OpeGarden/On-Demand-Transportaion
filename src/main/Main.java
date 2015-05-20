@@ -10,12 +10,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-
-		maingraph();
+		//maingraph();
+		main0();
 		
-		
-		
-
 	}
 	public static void main0(){
 		DriveAbsoluteMinimumA d = new DriveAbsoluteMinimumA();
@@ -25,6 +22,8 @@ public class Main {
 		main2(d2);
 		main3(d3);
 	}
+	
+	
 	public static void maingraph(){
 		try {
 			Graphs.passengerChange();
@@ -66,7 +65,7 @@ public class Main {
 		d.createRoute();
 
 		Statistics.statistic(d.getDrivers(), "static");
-		DrawDrive.draw("array method", d);
+		DrawDrive.draw("array method", d, true);
 	}
 
 }

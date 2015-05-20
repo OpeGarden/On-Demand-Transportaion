@@ -101,7 +101,7 @@ public class Statistics {
 				double route = routePasenger(tr, d);
 				double direct = directRoutePasenger(tr, d);
 				double diff = route - direct;
-				double yahas = diff / route;
+				double yahas = diff / direct;
 				if(route == 0){
 					throw new Exception("route 0");
 				}
@@ -229,9 +229,11 @@ public class Statistics {
 		return t.getOrigin().distance(t.getDest());
 	}
 
-	public static double waitToDrive(TransportRequest t, Driver dr) {
-		if (!(dr.getPassengers().contains(t)))
-			return -1;
+	public static double waitToDrive(TransportRequest t, Driver dr) throws Exception {
+		if (!(dr.getPassengers().contains(t))){
+			throw new Exception("!(dr.getPassengers().contains(t))");	
+		}
+		
 		double ans = 0;
 		Point p = dr.getRoute().get(0);
 		int i = 1;

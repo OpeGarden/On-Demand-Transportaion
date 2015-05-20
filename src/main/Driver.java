@@ -77,6 +77,15 @@ public class Driver {
 		return ans;
 	}
 
+	
+	public static ArrayList<Driver> stationDrivers(int num){
+		ArrayList<Driver> ans = new ArrayList<Driver>();
+		for (int i = 0; i < num; i++) {
+			ans.add(new Driver(new Point((i+3)*2, 3)));
+		}
+		return ans;
+	}
+	
 	public double distanceFromRequestOrigin(TransportRequest r) {
 		return location.distance(r.getOrigin());
 	}

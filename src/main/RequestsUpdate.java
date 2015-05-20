@@ -1,7 +1,7 @@
 package main;
 
 public class RequestsUpdate { //new "stack" of requests
-	public static int NUM_OF_REQUESTS = 100;
+	public static int NUM_OF_REQUESTS = 10;
 	private TransportRequest[] requests;
 	private DistancesMatrix originDistances;
 	private DistancesMatrix destDistances;

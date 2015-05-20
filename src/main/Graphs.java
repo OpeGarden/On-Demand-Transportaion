@@ -30,7 +30,12 @@ public class Graphs {
 			for (int j = 0; j < ITERATIONS; j++) {
 				RequestsUpdate.NUM_OF_REQUESTS = i;
 				//System.out.println("NUM_OF_REQUESTS: " + i + " num of drivers: " + Drive.NUM_OF_DRIVERS);
+<<<<<<< HEAD
 				//Drive.NUM_OF_DRIVERS = i / Driver.MAX_CAPACITY;
+=======
+				Drive.NUM_OF_DRIVERS = i / Driver.MAX_CAPACITY;
+				
+>>>>>>> f5dca94378a248476194c9a29ae4fc9d678dd7ee
 				DriveAbsoluteMinimumA d = new DriveAbsoluteMinimumA();
 				DriveMethodOne d2 = new DriveMethodOne(d.getRequestsList(),
 						d.getDrivers());
