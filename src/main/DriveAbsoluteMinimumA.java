@@ -9,9 +9,13 @@ public class DriveAbsoluteMinimumA extends Drive implements IDrive {
 	private MinAbsNode[] minAbsNodes;
 	private DistancesMatrix passengerToDriverDistance;
 
-
 	public DriveAbsoluteMinimumA(){
 		super();
+		fillPassengerToDriverDistanceMatrix();
+	}
+
+	public DriveAbsoluteMinimumA(boolean areas){
+		super(areas);
 		fillPassengerToDriverDistanceMatrix();
 	}
 

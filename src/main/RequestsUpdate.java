@@ -19,8 +19,18 @@ public class RequestsUpdate { //new "stack" of requests
 		return requests.length;
 	}
 	
+	/**
+	 * constractur for areas
+	 */
 	public RequestsUpdate(){
 		this(randomTransportRequestsAreas(NUM_OF_REQUESTS));
+	}
+	
+	/**
+	 * constractur for no areas
+	 */
+	public RequestsUpdate(boolean areas){
+			this(randomTransportRequests(NUM_OF_REQUESTS));
 	}
 	
 	public RequestsUpdate(TransportRequest[] requests) {

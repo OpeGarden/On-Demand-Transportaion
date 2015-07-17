@@ -1,18 +1,17 @@
 package main;
 
 import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+
 
 import main.Statistics;
 
 public class Main {
 
 	public static void main(String[] args) {
-		
-		//maingraph();
-		main0();
-		
+
+		maingraph();
+		//main0();
+
 	}
 	public static void main0(){
 		DriveAbsoluteMinimumA d = new DriveAbsoluteMinimumA();
@@ -22,11 +21,11 @@ public class Main {
 		main2(d2);
 		main3(d3);
 	}
-	
-	
+
+
 	public static void maingraph(){
 		try {
-			Graphs.passengerChange();
+			Graphs.passengerChange(true);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -37,8 +36,8 @@ public class Main {
 	}
 
 	public static void main3(Drive d){
-		 
-				
+
+
 		d.matchRequestsToDrivers();
 
 		d.createRoute();
@@ -47,6 +46,7 @@ public class Main {
 		DrawDrive.draw("min update", d);
 
 	}
+	
 	public static void main2(Drive d) {
 
 		d.matchRequestsToDrivers();
@@ -67,5 +67,10 @@ public class Main {
 		Statistics.statistic(d.getDrivers(), "static");
 		DrawDrive.draw("array method", d, true);
 	}
+	
+
+
+
+	
 
 }

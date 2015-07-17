@@ -4,14 +4,23 @@ import java.util.ArrayList;
 
 public class DriveMethodOne extends Drive {
 	private int driverCounter = 0;
+	
 	public DriveMethodOne(RequestsUpdate update, ArrayList<Driver> drivers) {
 		super(update, drivers);
+	}
+	
+	public DriveMethodOne(RequestsUpdate update, ArrayList<Driver> drivers,boolean areas) {
+		super(update, drivers,areas);
 	}
 
 	public DriveMethodOne() {
 		super();
 	}
 
+	public DriveMethodOne(boolean areas) {
+		super(areas);
+	}
+	
 	public void matchRequestsToDrivers() { // the fitst function
 		for(Driver d : drivers){
 			if(requestsList.areAllMatched()) break;
