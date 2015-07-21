@@ -7,7 +7,8 @@ public class Driver {
 
 	public static int MAX_CAPACITY = 5;
 	private int capacity; // the place in the car. 
-	private Point location; //the location of the driver.
+	private final Point location; //the first location of the driver couldn't change.
+	private Point changeLocation; 
 	private ArrayList<TransportRequest> passengers;
 	
 	private DistancesMatrix originDistances;
@@ -39,6 +40,7 @@ public class Driver {
 		passengers = new ArrayList<TransportRequest>();
 		capacity=0;
 		this.location=location;
+		this.changeLocation=new Point(location);
 	}
 	public Driver(){
 		this(new Point('r'));
@@ -178,6 +180,24 @@ public class Driver {
 	public boolean isEmpty() {
 		return size() == 0;
 	}
+	public void setminuscapacity(){
+		capacity--;
+	}
+	
+	public Point getChangeLocation() {
+		return changeLocation;
+	}
+	public void setChangeLocation(Point cahngeLocation) {
+		this.changeLocation = cahngeLocation;
+	}
+	public void setRoute(ArrayList<Point> route2,double lenthRoute2) {
+		// TODO Auto-generated method stub
+		route=route2;
+		lengthRoute=lenthRoute2;
+		
+	}
+	
+	
 
 }
 

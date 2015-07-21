@@ -45,7 +45,7 @@ public class DriveAbsoluteMinimunUpdating extends Drive {
 			for (int j = 0; j < M; j++) {
 				Point p = requestsList.get(i).getOrigin();
 				Point p2 = drivers.get(j).getLocation();
-				double d = p.distance(p2);
+				double d = p.distance(p2); 
 				updatingMatrix.setNonSquareDistance(i, j, d);
 			}
 		}

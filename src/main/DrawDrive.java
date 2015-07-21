@@ -16,7 +16,7 @@ public class DrawDrive {
 	}
 	public static void draw(String title, IDrive drive, boolean noLines) {
 		RequestsUpdate requestsList = drive.getRequestsList();
-		ArrayList<Driver> drivers = drive.getDrivers();
+		//ArrayList<Driver> drivers = drive.getDrivers();
 		Plot graphi = new Plot(title, -2, Point.LIMIT, 100, -2, Point.LIMIT, 100); // make new graph
 			
 		int flag = 1;
@@ -55,7 +55,7 @@ public class DrawDrive {
 
 	}
 	public static void draw(String string, Drive d) {
-		draw(string, d, false);
+		draw(string, d, true);
 		
 	}
 

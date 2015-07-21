@@ -1,49 +1,481 @@
 
 
 
-static
+min update
 
  DRIVER
 
- averege roude all drivers are - 186.05276686093032
- min roude all drivers are - 157.03496591476713 index of min0
- max roude all drivers are - 238.89492797921997 index of max2
+ averege roude all drivers are - 345.97426903427254
+ min roude all drivers are - 244.1321944394767 index of min0
+ max roude all drivers are - 447.81634362906834 index of max1
  
  PASSENGER 
 
- averege roude all passanger are - 0.6533131464404561
- averege waited to collect all driver are - 51.36931213754406
+ averege roude all passanger are - 14.3217166415426
+ averege waited to collect all driver are - 115.97968335929161
+ min roude all passanger are - 0.08672029495197772
+ max roude all passanger are - 97.31466309133216
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 395.83935084502787
+ min roude all drivers are - 387.312072534694 index of min0
+ max roude all drivers are - 404.3666291553617 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.716463221156042
+ averege waited to collect all driver are - 112.51993662986486
+ min roude all passanger are - 3.1005027440987663E-4
+ max roude all passanger are - 7.955923691036661
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 340.85097909937247
+ min roude all drivers are - 321.53079864061897 index of min1
+ max roude all drivers are - 360.1711595581259 index of max0
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 4.688704517736609
+ averege waited to collect all driver are - 102.1571299664154
+ min roude all passanger are - 0.376730108921985
+ max roude all passanger are - 20.701906892464045
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 358.22275355228203
+ min roude all drivers are - 294.32627737016367 index of min0
+ max roude all drivers are - 422.11922973440045 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 1.913305467591194
+ averege waited to collect all driver are - 134.66870933165188
+ min roude all passanger are - 0.24486334253825662
+ max roude all passanger are - 4.134752866610466
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 310.54546557020143
+ min roude all drivers are - 221.4934559156261 index of min0
+ max roude all drivers are - 399.59747522477676 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 7.993394514961577
+ averege waited to collect all driver are - 109.10633016271045
+ min roude all passanger are - 0.5131679428649653
+ max roude all passanger are - 47.99659738661047
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 286.1140672672225
+ min roude all drivers are - 281.0756388329338 index of min0
+ max roude all drivers are - 291.15249570151116 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.433175854095256
+ averege waited to collect all driver are - 73.67397747616242
+ min roude all passanger are - 0.21025751853537195
+ max roude all passanger are - 5.6174574723234345
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 339.8167922688082
+ min roude all drivers are - 302.7565794436957 index of min0
+ max roude all drivers are - 376.8770050939206 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 1.8218514704499649
+ averege waited to collect all driver are - 141.05130209029315
+ min roude all passanger are - 0.15740666949392296
+ max roude all passanger are - 9.500075442528445
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 361.47121510435335
+ min roude all drivers are - 355.481395444149 index of min1
+ max roude all drivers are - 367.4610347645577 index of max0
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 1.2278166372737496
+ averege waited to collect all driver are - 89.13258607421872
+ min roude all passanger are - 0.19556885512936892
+ max roude all passanger are - 2.80382376528266
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 411.87795695448244
+ min roude all drivers are - 320.45677989497625 index of min0
+ max roude all drivers are - 503.2991340139886 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.1389660430518154
+ averege waited to collect all driver are - 126.55416132090136
+ min roude all passanger are - 0.693897023692879
+ max roude all passanger are - 5.053134117696871
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 340.9824695461612
+ min roude all drivers are - 258.56351721086367 index of min0
+ max roude all drivers are - 423.40142188145876 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.793113691318721
+ averege waited to collect all driver are - 103.6095851213352
  min roude all passanger are - 0.0
- max roude all passanger are - 3.070615822292541
+ max roude all passanger are - 10.267439302866022
 
 
-naive
-
- DRIVER
-
- averege roude all drivers are - 189.60815781137214
- min roude all drivers are - 128.03669018894624 index of min0
- max roude all drivers are - 235.86554928492333 index of max2
- 
- PASSENGER 
-
- averege roude all passanger are - 0.5409328690767623
- averege waited to collect all driver are - 69.80123708451394
- min roude all passanger are - 3.815705206335728E-4
- max roude all passanger are - 2.0548935522923486
-
-
-dynamic
+min update
 
  DRIVER
 
- averege roude all drivers are - 189.57267042408884
- min roude all drivers are - 133.72717844399594 index of min3
- max roude all drivers are - 262.2138869003389 index of max1
+ averege roude all drivers are - 338.59937644122846
+ min roude all drivers are - 244.71047571613528 index of min0
+ max roude all drivers are - 432.4882771663216 index of max1
  
  PASSENGER 
 
- averege roude all passanger are - 0.784381321943471
- averege waited to collect all driver are - 54.506761633318625
- min roude all passanger are - 3.815705206335728E-4
- max roude all passanger are - 2.0548935522923486
+ averege roude all passanger are - 2.1650934406887132
+ averege waited to collect all driver are - 104.4537112574908
+ min roude all passanger are - 0.0
+ max roude all passanger are - 4.078930455158146
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 369.4078511908541
+ min roude all drivers are - 346.734586325425 index of min0
+ max roude all drivers are - 392.0811160562831 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 7.457824277289696
+ averege waited to collect all driver are - 127.02632123027743
+ min roude all passanger are - 0.0
+ max roude all passanger are - 35.79381498906929
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 384.26838072877183
+ min roude all drivers are - 332.464943374351 index of min0
+ max roude all drivers are - 436.0718180831926 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 3.662488279377974
+ averege waited to collect all driver are - 127.21849533236676
+ min roude all passanger are - 0.0
+ max roude all passanger are - 11.875235510381275
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 320.2330287972865
+ min roude all drivers are - 221.01129631902833 index of min0
+ max roude all drivers are - 419.45476127554474 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 3.3707980434884126
+ averege waited to collect all driver are - 92.41954768168061
+ min roude all passanger are - 0.2732601687489913
+ max roude all passanger are - 10.891615901112054
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 370.4518508326745
+ min roude all drivers are - 274.3463099140047 index of min0
+ max roude all drivers are - 466.55739175134437 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.2987550066897318
+ averege waited to collect all driver are - 118.03080595127494
+ min roude all passanger are - 0.32228797964381223
+ max roude all passanger are - 8.280854053223932
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 378.5308289244308
+ min roude all drivers are - 353.14728857752465 index of min0
+ max roude all drivers are - 403.9143692713369 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 4.719515934930934
+ averege waited to collect all driver are - 120.96801556423198
+ min roude all passanger are - 0.0
+ max roude all passanger are - 12.937231762075882
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 354.4281703880815
+ min roude all drivers are - 228.82755316293574 index of min0
+ max roude all drivers are - 480.0287876132273 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.931544020730291
+ averege waited to collect all driver are - 112.92328069767996
+ min roude all passanger are - 0.0
+ max roude all passanger are - 14.869936038127772
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 355.01893623318097
+ min roude all drivers are - 321.6105085996044 index of min0
+ max roude all drivers are - 388.42736386675756 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.1671089142016724
+ averege waited to collect all driver are - 139.90529763001564
+ min roude all passanger are - 0.004987991040071617
+ max roude all passanger are - 10.327736393479388
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 339.192831892509
+ min roude all drivers are - 217.90698438775584 index of min0
+ max roude all drivers are - 460.4786793972621 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.6688343462105584
+ averege waited to collect all driver are - 131.06278240149658
+ min roude all passanger are - 0.1105522946233339
+ max roude all passanger are - 10.68471175845046
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 359.7150281491948
+ min roude all drivers are - 293.45933410185364 index of min0
+ max roude all drivers are - 425.9707221965359 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 3.462584086916415
+ averege waited to collect all driver are - 136.50815758499783
+ min roude all passanger are - 0.029377997269980364
+ max roude all passanger are - 14.567787543441945
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 383.63372524563465
+ min roude all drivers are - 333.4803606742159 index of min0
+ max roude all drivers are - 433.78708981705347 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 1.8532737196905316
+ averege waited to collect all driver are - 119.85604724919799
+ min roude all passanger are - 0.0
+ max roude all passanger are - 4.972781332125007
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 299.77280193539957
+ min roude all drivers are - 253.0528755610693 index of min0
+ max roude all drivers are - 346.4927283097298 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.7009527355114407
+ averege waited to collect all driver are - 101.86500989382205
+ min roude all passanger are - 0.0
+ max roude all passanger are - 13.115994755591217
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 306.1090499516162
+ min roude all drivers are - 293.9034191234863 index of min1
+ max roude all drivers are - 318.31468077974614 index of max0
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 3.8068846235620786
+ averege waited to collect all driver are - 114.45935981439759
+ min roude all passanger are - 0.9068270508408813
+ max roude all passanger are - 14.139005986318853
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 346.02336369149657
+ min roude all drivers are - 289.93937766193613 index of min0
+ max roude all drivers are - 402.10734972105706 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.192475109351907
+ averege waited to collect all driver are - 111.94215777241376
+ min roude all passanger are - 0.28499173957235846
+ max roude all passanger are - 10.465443947279514
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 461.98147242150344
+ min roude all drivers are - 333.3281785631476 index of min0
+ max roude all drivers are - 590.6347662798593 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 9.068450554801048
+ averege waited to collect all driver are - 142.57035464712266
+ min roude all passanger are - 0.6201715851960763
+ max roude all passanger are - 45.86437902279544
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 338.45875069396743
+ min roude all drivers are - 303.13260808846735 index of min0
+ max roude all drivers are - 373.78489329946757 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.709239883806953
+ averege waited to collect all driver are - 101.42992746466965
+ min roude all passanger are - 0.16100037979435955
+ max roude all passanger are - 10.945308546262106
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 450.788000886742
+ min roude all drivers are - 411.4385897702246 index of min0
+ max roude all drivers are - 490.13741200325944 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.191145592783092
+ averege waited to collect all driver are - 141.42062304699112
+ min roude all passanger are - 0.10279025617720593
+ max roude all passanger are - 6.439504499332299
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 353.7022712265513
+ min roude all drivers are - 250.3914917650061 index of min0
+ max roude all drivers are - 457.01305068809654 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.490135159622861
+ averege waited to collect all driver are - 133.91760626440856
+ min roude all passanger are - 0.19892558232118082
+ max roude all passanger are - 8.628981683180076
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 378.95331626986695
+ min roude all drivers are - 268.54635179298833 index of min0
+ max roude all drivers are - 489.36028074674556 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 3.643345115148974
+ averege waited to collect all driver are - 111.25090149099466
+ min roude all passanger are - 0.0
+ max roude all passanger are - 14.339440477494607
+
+
+min update
+
+ DRIVER
+
+ averege roude all drivers are - 343.01403511781575
+ min roude all drivers are - 286.071310848645 index of min0
+ max roude all drivers are - 399.95675938698645 index of max1
+ 
+ PASSENGER 
+
+ averege roude all passanger are - 2.5897429464712367
+ averege waited to collect all driver are - 121.76929253338903
+ min roude all passanger are - 0.010471266952963416
+ max roude all passanger are - 10.808136420497084
