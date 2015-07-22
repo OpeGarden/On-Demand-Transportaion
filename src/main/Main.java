@@ -13,6 +13,8 @@ public class Main {
 
 		//maingraph();
 		main0();
+		
+		System.out.println("---end---");
 
 	}
 	
@@ -65,11 +67,10 @@ public class Main {
 		DriveMethodOne d2 = new DriveMethodOne(d.getRequestsList(), d.getDrivers());
 		DriveAbsoluteMinimunUpdating d3 = new DriveAbsoluteMinimunUpdating(d.getRequestsList(), d.getDrivers());
 		DriveOndPassengerAtTime d4=new DriveOndPassengerAtTime(d.getRequestsList(), d.getDrivers());
-	/*	main1(d);
+		main1(d);
 		main2(d2);
 		main3(d3);
-		*/
-		main2(d2);
+
 	}
 
 
@@ -101,7 +102,7 @@ public class Main {
 
 		d.matchRequestsToDrivers();
 
-		d.createRoute();
+		d.createRouteFullSearchTsp();
 
 		Statistics.statistic(d.getDrivers(), "naive");
 		DrawDrive.draw("old", d);

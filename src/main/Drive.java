@@ -104,7 +104,7 @@ public abstract class Drive implements IDrive {
 		for(Driver d : drivers){
 			if(!d.isEmpty()){
 				d.setDistanceMatrices();
-				TSPNearestNeighbour tspNearestNeighbour = new TSPNearestNeighbour();
+				TSPNearestNeighbour tspNearestNeighbour = new TSPNearestNeighbour(d.getPassengers().size());
 				ArrayList<TransportRequest> routeOrigins = tspNearestNeighbour.tsp(d.getPassengers(),
 						d.getOriginDistances().distances, 0);
 				d.setRouteOrigins(routeOrigins);
@@ -113,6 +113,21 @@ public abstract class Drive implements IDrive {
 						d.getDestDistances().distances, beginDest);
 				d.setRouteDests(routeDests);
 
+				d.setRoute();
+			}
+		}
+	}
+	
+	public void createRouteFullSearchTsp(){
+		for(Driver d : drivers){
+			if(!d.isEmpty()){
+				d.setDistanceMatrices();
+				TSPNearestNeighbour tspNearestNeighbour = new TSPNearestNeighbour(d.getPassengers().size());
+				ArrayList<TransportRequest> routeOrigins = tspNearestNeighbour.tspFull(d.getPassengers(), d.getOriginDistances().distances);
+				d.setRouteOrigins(routeOrigins);
+				int beginDest = d.getClosestToLastOrigin();
+				ArrayList<TransportRequest> routeDests = tspNearestNeighbour.tspFull(d.getPassengers(), d.getDestDistances().distances);
+				d.setRouteDests(routeDests);
 				d.setRoute();
 			}
 		}

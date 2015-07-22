@@ -38,7 +38,7 @@ public class DrawDrive {
 			
 			
 			
-			if(!noLines && flag==2){
+			if(!noLines && flag==3){
 				if(routeExample != null){
 					graphi.setColor(randomColor());
 					for (int i = 1; i < routeExample.size(); i++) {
@@ -55,7 +55,7 @@ public class DrawDrive {
 
 	}
 	public static void draw(String string, Drive d) {
-		draw(string, d, true);
+		draw(string, d, false);
 		
 	}
 
