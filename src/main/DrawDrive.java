@@ -18,10 +18,6 @@ public class DrawDrive {
 		RequestsUpdate requestsList = drive.getRequestsList();
 		//ArrayList<Driver> drivers = drive.getDrivers();
 		Plot graphi = new Plot(title, -2, Point.LIMIT, 100, -2, Point.LIMIT, 100); // make new graph
-			
-		int flag = 1;
-		
-		
 
 		for(Driver d : drive.getDrivers()){
 
@@ -38,7 +34,7 @@ public class DrawDrive {
 			
 			
 			
-			if(!noLines && flag==3){
+			if(!noLines){
 				if(routeExample != null){
 					graphi.setColor(randomColor());
 					for (int i = 1; i < routeExample.size(); i++) {
@@ -47,7 +43,7 @@ public class DrawDrive {
 				}
 				
 			}
-			flag ++;
+			
 			
 			
 		}

@@ -61,18 +61,17 @@ public class Main {
 	//Statistics.statistic(d.getDrivers(), "asfasf");
 
 	}
-	public static void main0(){
-		
-		DriveAbsoluteMinimumA d = new DriveAbsoluteMinimumA(false);
+	
+	public static void main0(){	
+		DriveAbsoluteMinimumA d = new DriveAbsoluteMinimumA();
 		DriveMethodOne d2 = new DriveMethodOne(d.getRequestsList(), d.getDrivers());
 		DriveAbsoluteMinimunUpdating d3 = new DriveAbsoluteMinimunUpdating(d.getRequestsList(), d.getDrivers());
 		DriveOndPassengerAtTime d4=new DriveOndPassengerAtTime(d.getRequestsList(), d.getDrivers());
-		main1(d);
-		main2(d2);
-		main3(d3);
-
+		sampleRun(d,"Static");
+		sampleRun(d2,"Naive");
+		sampleRun(d3,"Dynamic");
+		sampleRun(d4,"One passenger");
 	}
-
 
 	public static void maingraph(){
 		try {
@@ -86,50 +85,50 @@ public class Main {
 		}
 	}
 
-	public static void main3(Drive d){
+	public static void main5(String method, int numPassenger, int passengersInCar, boolean areas){
+		Drive d;
+		updateParameters(numPassenger,passengersInCar);
+		switch (method){
+		case "Naive" :
+			d = new DriveMethodOne(areas);
+			sampleRun(d,method);
+			break;
+		case "Static" :
+			 d = new DriveAbsoluteMinimumA(areas);
+			 sampleRun(d,method);
+			break;
+		case "Dynamic" :
+			d = new DriveAbsoluteMinimunUpdating(areas);
+			sampleRun(d,method);
+			break;
+		case "One passenger" :
+			d = new DriveOndPassengerAtTime(areas);
+			sampleRun(d,method);
+			break;
+		  default:
+			  d = new DriveMethodOne(areas);
+			  sampleRun(d,"Naive");
+			  d = new DriveAbsoluteMinimumA(d.getRequestsList(), d.getDrivers());
+			  sampleRun(d,"Static");
+			  d = new DriveAbsoluteMinimunUpdating(d.getRequestsList(), d.getDrivers());
+			  sampleRun(d,"Dynamic");
+			  d = new DriveOndPassengerAtTime(d.getRequestsList(), d.getDrivers());
+			  sampleRun(d,"One passenger");
+			break;
+			
+		}
+	}
 
+	private static void updateParameters(int numPassenger, int passengersInCar) {
+		Driver.MAX_CAPACITY = passengersInCar;
+		RequestsUpdate.NUM_OF_REQUESTS = numPassenger;
+		Drive.NUM_OF_DRIVERS = numPassenger / passengersInCar;
+	}
 
+	private static void sampleRun(Drive d, String method){
 		d.matchRequestsToDrivers();
-
 		d.createRoute();
-
-		Statistics.statistic(d.getDrivers(), "dynamic");
-		DrawDrive.draw("min update", d);
-
+		Statistics.statistic(d.getDrivers(), method);
+		DrawDrive.draw(method, d, false);
 	}
-	
-	public static void main2(Drive d) {
-
-		d.matchRequestsToDrivers();
-
-		d.createRouteFullSearchTsp();
-
-		Statistics.statistic(d.getDrivers(), "naive");
-		DrawDrive.draw("old", d);
-
-	}
-
-	public static void main1(Drive d) {
-
-		d.matchRequestsToDrivers();
-
-		d.createRoute();
-
-		Statistics.statistic(d.getDrivers(), "static");
-		DrawDrive.draw("array method", d, true);
-	}
-	
-	public static void main4(Drive d) {
-
-		d.matchRequestsToDrivers();
-
-		d.createRoute();
-
-		//Statistics.statistic(d.getDrivers(), "one passenger");
-		DrawDrive.draw("one passenger at time", d, true);
-	}
-
-
-	
-
 }

@@ -39,8 +39,8 @@ public class DriveAbsoluteMinimumA extends Drive implements IDrive {
 	}
 
 	public DriveAbsoluteMinimumA(RequestsUpdate requestsList, ArrayList<Driver> drivers) {
-		this.requestsList = requestsList;
-		this.drivers = drivers;
+		super(requestsList, drivers);
+		fillPassengerToDriverDistanceMatrix();
 	}
 
 

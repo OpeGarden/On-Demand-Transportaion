@@ -51,47 +51,18 @@ public abstract class Drive implements IDrive {
 		drivers = Driver.stationDrivers(NUM_OF_DRIVERS);
 	}
 
-	public Drive(RequestsUpdate requestsList, ArrayList<Driver> drivers,boolean areas) {
-		if(areas)
-			this.requestsList = new RequestsUpdate();
-		else
-			this.requestsList = new RequestsUpdate(areas);
-		this.drivers = new ArrayList<Driver>();
-
-		for(Driver d: drivers){
-			this.drivers.add(new Driver(d));
-		}
-
-
-		TransportRequest[] requests = new TransportRequest[requestsList.size()];
-		int i =0;
-		for(TransportRequest tr : requestsList.getRequest()){		
-			requests[i++] = new TransportRequest(tr);
-		}
-
-		this.requestsList = new RequestsUpdate(requests);
-
-	}
 	
 	public Drive(RequestsUpdate requestsList, ArrayList<Driver> drivers) {
-
-
-		this.requestsList = new RequestsUpdate();
 		this.drivers = new ArrayList<Driver>();
-
 		for(Driver d: drivers){
 			this.drivers.add(new Driver(d));
 		}
-
-
 		TransportRequest[] requests = new TransportRequest[requestsList.size()];
 		int i =0;
 		for(TransportRequest tr : requestsList.getRequest()){		
 			requests[i++] = new TransportRequest(tr);
 		}
-
 		this.requestsList = new RequestsUpdate(requests);
-
 	}
 
 	public void matchMethodAbsoluteMinimum(){

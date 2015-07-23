@@ -29,11 +29,6 @@ public class DriveAbsoluteMinimunUpdating extends Drive {
 		super(requestsUpdate, drivers);
 		fillMatrix();
 	}
-	
-	public DriveAbsoluteMinimunUpdating(RequestsUpdate requestsUpdate, ArrayList<Driver> drivers,boolean areas) {
-		super(requestsUpdate, drivers,areas);
-		fillMatrix();
-	}
 
 	private void fillMatrix() {
 		N = requestsList.size();

@@ -33,12 +33,6 @@ public class DriveOndPassengerAtTime extends Drive{
 		sumdrive=new double[M];
 	}
 
-	public DriveOndPassengerAtTime(RequestsUpdate requestsUpdate, ArrayList<Driver> drivers,boolean areas) {
-		super(requestsUpdate, drivers,areas);
-		fillMatrix();
-		sumdrive=new double[M];
-	}
-
 	private void fillMatrix() {
 		N = requestsList.size();
 		M = drivers.size();

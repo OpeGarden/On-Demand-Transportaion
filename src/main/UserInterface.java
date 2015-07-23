@@ -69,6 +69,7 @@ public class UserInterface {
 		JButton B_Sample = new JButton("Sample");
 		B_Sample.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				SampleActionPerformed(arg0);
 			}
 		});
 		B_Sample.setBounds(10, 307, 135, 43);
@@ -96,17 +97,17 @@ public class UserInterface {
 		
 		JLabel L_Sample = new JLabel("Only One Run,\r\nFor Examples");
 		L_Sample.setLabelFor(B_Sample);
-		L_Sample.setBounds(10, 268, 135, 28);
+		L_Sample.setBounds(10, 268, 180, 28);
 		frame.getContentPane().add(L_Sample);
 		
 		JLabel L_Run1 = new JLabel("Tests from 10 to the number");
 		L_Run1.setLabelFor(B_Run);
-		L_Run1.setBounds(184, 253, 142, 28);
+		L_Run1.setBounds(184, 253, 180, 28);
 		frame.getContentPane().add(L_Run1);
 		
 		JLabel L_Run2 = new JLabel("of drivers and passengers");
 		L_Run2.setLabelFor(B_Run);
-		L_Run2.setBounds(184, 282, 142, 20);
+		L_Run2.setBounds(184, 282, 180, 20);
 		frame.getContentPane().add(L_Run2);
 		
 		ChBox_regions = new JCheckBox("Regions");
@@ -181,14 +182,25 @@ public class UserInterface {
 		String method = (String) CB_Method.getSelectedItem();
 		int runs = Integer.parseInt((String) CB_NORuns.getSelectedItem());
 		int numPassenger = Integer.parseInt(TF_NOPassengers.getText());
-		int passengersInCar = Integer.parseInt(TF_PRatio.getText());
+		int d = Integer.parseInt(TF_DRatio.getText());
+		int p = Integer.parseInt(TF_PRatio.getText());
+		int passengersInCar = p / d;
 		boolean areas = ChBox_regions.isSelected();
-		System.out.println(method +"," + runs +"," + numPassenger +"," + passengersInCar +"," + areas);
 		try {
 			Graphs g = new Graphs(runs,numPassenger);
 			g.Run(method,passengersInCar,areas);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	protected void SampleActionPerformed(ActionEvent arg0) {
+		String method = (String) CB_Method.getSelectedItem();
+		int numPassenger = Integer.parseInt(TF_NOPassengers.getText());
+		int d = Integer.parseInt(TF_DRatio.getText());
+		int p = Integer.parseInt(TF_PRatio.getText());
+		int passengersInCar = p / d;
+		boolean areas = ChBox_regions.isSelected();
+		Main.main5(method , numPassenger ,passengersInCar , areas);
 	}
 }

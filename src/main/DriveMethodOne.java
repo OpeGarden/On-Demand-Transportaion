@@ -8,10 +8,6 @@ public class DriveMethodOne extends Drive {
 	public DriveMethodOne(RequestsUpdate update, ArrayList<Driver> drivers) {
 		super(update, drivers);
 	}
-	
-	public DriveMethodOne(RequestsUpdate update, ArrayList<Driver> drivers,boolean areas) {
-		super(update, drivers,areas);
-	}
 
 	public DriveMethodOne() {
 		super();

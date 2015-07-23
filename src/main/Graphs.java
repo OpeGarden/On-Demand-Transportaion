@@ -24,26 +24,23 @@ public class Graphs {
 		double[] waitArr;
 		double[] midAdditionArr;
 
-		avgAddtion = maxAddition = avgWait = midAddtion = ",static method,naive method,dynamic method";
+		avgAddtion = maxAddition = avgWait = midAddtion = ",static method,naive method,dynamic method,one passenger method";
 
 		for (int i = 10; i <= PASSENGERS; i += 5) {
-			additionArr = new double[3];
-			maxAdditionArr = new double[3];
-			waitArr = new double[3];
-			midAdditionArr = new double[3];
+			additionArr = new double[4];
+			maxAdditionArr = new double[4];
+			waitArr = new double[4];
+			midAdditionArr = new double[4];
 
 			for (int j = 0; j < ITERATIONS; j++) {
 				RequestsUpdate.NUM_OF_REQUESTS = i;
-				//System.out.println("NUM_OF_REQUESTS: " + i + " num of drivers: " + Drive.NUM_OF_DRIVERS);
-
-				//Drive.NUM_OF_DRIVERS = i / Driver.MAX_CAPACITY;
 
 				Drive.NUM_OF_DRIVERS = i / Driver.MAX_CAPACITY;
 				
-
 				DriveAbsoluteMinimumA d = new DriveAbsoluteMinimumA(areas);
-				DriveMethodOne d2 = new DriveMethodOne(d.getRequestsList(), d.getDrivers(),areas);
-				DriveAbsoluteMinimunUpdating d3 = new DriveAbsoluteMinimunUpdating(d.getRequestsList(), d.getDrivers(),areas);
+				DriveMethodOne d2 = new DriveMethodOne(d.getRequestsList(), d.getDrivers());
+				DriveAbsoluteMinimunUpdating d3 = new DriveAbsoluteMinimunUpdating(d.getRequestsList(), d.getDrivers());
+				DriveOndPassengerAtTime d4 = new DriveOndPassengerAtTime(d.getRequestsList(), d.getDrivers());
 
 				d.matchRequestsToDrivers();
 				d.createRoute();
@@ -53,17 +50,23 @@ public class Graphs {
 
 				d3.matchRequestsToDrivers();
 				d3.createRoute();
+				
+				d4.matchRequestsToDrivers();
+				d4.createRoute();
 
 				Statistics statistics1 = Statistics.statistic(d.getDrivers(),
-						"min update");
+						"Static");
 				Statistics statistics2 = Statistics.statistic(d2.getDrivers(),
-						"min update");
+						"Naive");
 				Statistics statistics3 = Statistics.statistic(d3.getDrivers(),
-						"min update");
+						"Dynamic");
+				Statistics statistics4 = Statistics.statistic(d4.getDrivers(),
+						"one passenger");
 
 				additionArr[0] += statistics1.getAdditionPrecentage();
 				additionArr[1] += statistics2.getAdditionPrecentage();
 				additionArr[2] += statistics3.getAdditionPrecentage();
+				additionArr[3] += statistics4.getAdditionPrecentage();
 
 				for (double d1 : additionArr) {
 					if (d1 == Double.NaN) {
@@ -74,43 +77,43 @@ public class Graphs {
 				maxAdditionArr[0] += statistics1.getMaxAddition();
 				maxAdditionArr[1] += statistics2.getMaxAddition();
 				maxAdditionArr[2] += statistics3.getMaxAddition();
+				maxAdditionArr[3] += statistics4.getMaxAddition();
 
 				waitArr[0] += statistics1.getWaitDistace();
 				waitArr[1] += statistics2.getWaitDistace();
 				waitArr[2] += statistics3.getWaitDistace();
+				waitArr[3] += statistics4.getWaitDistace();
 
 				midAdditionArr[0] += statistics1.getMidAddition();
 				midAdditionArr[1] += statistics2.getMidAddition();
 				midAdditionArr[2] += statistics3.getMidAddition();
+				midAdditionArr[3] += statistics4.getMidAddition();
 
 			}
 
 			avgAddtion += "\n" + i + " passengers,"
 					+ (additionArr[0] / ITERATIONS) + ","
 					+ (additionArr[1] / ITERATIONS) + ","
-					+ (additionArr[2] / ITERATIONS);
-
-		/*  if (avgAddtion.contains("NaN")){
-				for (double d1 : additionArr) {
-					System.out.println(((Double)d1).isNaN());
-				}
-				throw new Exception("drivers.size(): ");
-			} */
+					+ (additionArr[2] / ITERATIONS) + ","
+					+ (additionArr[3] / ITERATIONS);
 
 			maxAddition += "\n" + i + " passengers,"
 					+ (maxAdditionArr[0] / ITERATIONS) + ","
 					+ (maxAdditionArr[1] / ITERATIONS) + ","
-					+ (maxAdditionArr[2] / ITERATIONS);
+					+ (maxAdditionArr[2] / ITERATIONS) + ","
+					+ (maxAdditionArr[3] / ITERATIONS);
 
-			avgWait += "\n" + i + " passengers," + (waitArr[0] / ITERATIONS)
-					+ "," + (waitArr[1] / ITERATIONS) + ","
-					+ (waitArr[2] / ITERATIONS);
+			avgWait += "\n" + i + " passengers,"
+					+ (waitArr[0] / ITERATIONS) + ","
+					+ (waitArr[1] / ITERATIONS) + ","
+					+ (waitArr[2] / ITERATIONS) + ","
+					+ (waitArr[3] / ITERATIONS);
 
 			midAddtion += "\n" + i + " passengers,"
 					+ (midAdditionArr[0] / ITERATIONS) + ","
 					+ (midAdditionArr[1] / ITERATIONS) + ","
-					+ (midAdditionArr[2] / ITERATIONS);
-
+					+ (midAdditionArr[2] / ITERATIONS) + ","
+					+ (midAdditionArr[3] / ITERATIONS);
 		}
 		
 		String str = "";
@@ -171,19 +174,25 @@ public class Graphs {
 				RequestsUpdate.NUM_OF_REQUESTS = i;
 
 				Drive.NUM_OF_DRIVERS = i / Driver.MAX_CAPACITY;
-				Object d;
-				if(method.equals("Naive"))
+				Object d = null;
+				switch (method){
+				case "Naive" :
 					d = new DriveMethodOne(areas);
-				else if(method.equals("Static"))
+					break;
+				case "Static":
 					d = new DriveAbsoluteMinimumA(areas);
-				else
+					break;
+				case "Dynamic":
 					d = new DriveAbsoluteMinimunUpdating(areas);
-				
-
+					break;
+				case "One passenger":
+					d = new DriveOndPassengerAtTime(areas);
+					break;
+				}
 				((Drive) d).matchRequestsToDrivers();
 				((Drive) d).createRoute();
 
-				Statistics statistics1 = Statistics.statistic(((Drive) d).getDrivers(),	"min update");
+				Statistics statistics1 = Statistics.statistic(((Drive) d).getDrivers(),	method);
 
 				additionArr += statistics1.getAdditionPrecentage();
 
